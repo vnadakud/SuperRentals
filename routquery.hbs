@@ -1,0 +1,22 @@
+<form {{action "addQuery" on="Submit"}}>
+  Enter {{input value= queryParam}}
+   <input type="submit" value="Send Value">
+</form>
+{{queryParam}}
+<br>
+<h2>List of Players</h2>
+<ul>
+  {{#each model as |player|}}
+    <li>{{player}}</li>
+  {{/each}}
+</ul>
+
+
+{{date-range-picker
+  label='Optional label'
+  start="20150101"
+  end="20151231"
+  applyAction=(action "setDateRange")
+  hideAction=(action "hideDatePicker")
+  cancelAction=(action "cancelDatePicker")
+}}
